@@ -89,25 +89,38 @@ footer {
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* .sobre{
-    display: inline-flex;
-} */
+
 .container {
-    /* display: flex; */
     justify-content: center;
     align-items: center;
+}
+.text-box nav li{
+    list-style: disc;
+    padding: 15px 10px;
+    border-bottom: 1px solid #ddd; 
+    transition: background-color 0.2s;
 }
 .text-box {
     background-color: #fff;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
     margin: 10px;
-    text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
 }
+nav li:hover {
+    background-color: #cdcbcb; 
+    cursor: pointer;
+  }
 h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.text-box h4 {
+    text-align: center;
+}
+.text-box h2{
+    text-align: center;
 }
 
 
