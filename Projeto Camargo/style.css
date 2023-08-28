@@ -1,0 +1,114 @@
+/* styles.css */
+/* Estilos para o layout da página */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(img/fundo3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* display: flex; */
+    justify-content: center;
+    min-height: 100vh; 
+}
+
+header {
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: rgb(14, 17, 153);
+    text-decoration: none;
+    font-size: larger;
+}
+
+.banner {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.banner img {
+    max-width: 100%;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Estilos para outras seções da página */
+/* ... */
+
+footer {
+    /* background-color: #3f3939; */
+    padding: 8px;
+    text-align: center;
+    color: rgb(14, 17, 153);; 
+}
+
+.footer-links {
+    list-style: none;
+    padding: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.footer-links li {
+    margin: 0 30px;
+    
+}
+
+.footer-links a {
+    color:rgb(14, 17, 153);;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* .sobre{
+    display: inline-flex;
+} */
+.container {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+.text-box {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 10px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
