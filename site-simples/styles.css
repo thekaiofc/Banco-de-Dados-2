@@ -1,0 +1,209 @@
+/* Define o estilo do corpo da página */
+body {
+  background-image: url("img/fundo.jpg"); /* Define a imagem de fundo da página */
+  background-repeat: no-repeat; /* Garante que a imagem não se repita */
+  background-attachment: fixed; /* Faz com que a imagem de fundo permaneça fixa */
+  background-size: cover; /* Garante que a imagem de fundo cubra toda a tela */
+  height: 100%; /* Define a altura do corpo para 100% da tela */
+  margin: 0; /* Remove a margem padrão do corpo */
+  font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão para o corpo */
+  box-sizing: border-box; /* Inclui bordas e preenchimentos no cálculo da largura e altura dos elementos */
+}
+
+/* Define o estilo do cabeçalho */
+.header {
+  background-color: rgba(0, 0, 0, 0.6); /* Define uma cor de fundo semitransparente para o cabeçalho */
+  padding: 20px 10px; /* Define o preenchimento interno do cabeçalho */
+  position: fixed; /* Fixa o cabeçalho no topo da página */
+  width: 100%; /* Define a largura do cabeçalho como 100% da tela */
+  top: 0; /* Posiciona o cabeçalho no topo da página */
+  left: 0; /* Posiciona o cabeçalho no canto esquerdo da página */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao cabeçalho */
+  z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+}
+
+/* Adiciona uma margem ao corpo para garantir que o conteúdo não sobreponha o cabeçalho fixo */
+body::before {
+  content: ""; /* Adiciona conteúdo vazio */
+  display: block; /* Define o display como bloco para criar um espaçamento */
+  height: 80px; /* Define a altura do espaçamento para a altura do cabeçalho */
+}
+
+/* Define o estilo dos links no cabeçalho */
+.header a {
+  color: white; /* Define a cor do texto dos links como branco */
+  text-align: center; /* Alinha o texto dos links ao centro */
+  padding: 12px; /* Define o preenchimento interno dos links */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  font-size: 16px; /* Define o tamanho da fonte dos links */
+  line-height: 25px; /* Define a altura da linha dos links */
+  border-radius: 4px; /* Adiciona bordas arredondadas aos links */
+  display: inline-block; /* Faz com que os links se comportem como blocos inline */
+  margin: 0 5px; /* Adiciona espaçamento horizontal entre os links */
+}
+
+/* Estilo específico para o link ativo no cabeçalho */
+.header a.active {
+  background-color: transparent; /* Define a cor de fundo do link ativo */
+  color: white; /* Define a cor do texto do link ativo como branco */
+}
+
+/* Define o estilo dos botões de navegação do slideshow */
+.prev, .next {
+  cursor: pointer; /* Altera o cursor para uma mão ao passar sobre o botão */
+  position: absolute; /* Posiciona os botões absolutamente dentro do container do slideshow */
+  top: 50%; /* Posiciona os botões verticalmente no meio do slideshow */
+  width: auto; /* Define a largura automática dos botões */
+  padding: 16px; /* Define o preenchimento interno dos botões */
+  color: white; /* Define a cor do texto dos botões como branco */
+  font-weight: bold; /* Define o peso da fonte dos botões como negrito */
+  font-size: 18px; /* Define o tamanho da fonte dos botões */
+  transition: 0.6s ease; /* Adiciona uma transição suave para os botões */
+  border-radius: 0 3px 3px 0; /* Adiciona bordas arredondadas apenas no lado direito dos botões */
+  user-select: none; /* Impede a seleção de texto ao clicar nos botões */
+}
+
+/* Estilo específico para o botão "next" */
+.next {
+  right: 0; /* Posiciona o botão "next" no lado direito do slideshow */
+  border-radius: 3px 0 0 3px; /* Adiciona bordas arredondadas apenas no lado esquerdo do botão "next" */
+}
+
+/* Estilo dos botões ao passar o mouse sobre eles */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); /* Define uma cor de fundo preta semi-transparente para os botões ao passar o mouse */
+}
+
+/* Define o estilo do container do slideshow */
+.slideshow-container {
+  max-width: 1000px; /* Define a largura máxima do container do slideshow */
+  position: relative; /* Define o posicionamento relativo para que os botões possam ser posicionados dentro dele */
+  margin: auto; /* Centraliza o container do slideshow horizontalmente */
+}
+
+/* Define o estilo das imagens no slideshow */
+.mySlides img {
+  width: 100%; /* Faz com que as imagens ocupem 100% da largura do container */
+  border: 3px solid #ddd; /* Adiciona uma borda cinza clara de 3 pixels ao redor das imagens */
+  box-sizing: border-box; /* Inclui a borda no cálculo da largura e altura da imagem */
+}
+
+/* Oculta os slides por padrão */
+.mySlides {
+  display: none; /* Define o display como "none" para ocultar os slides que não devem ser exibidos */
+}
+
+/* Define o estilo dos pontos de navegação */
+.dot {
+  cursor: pointer; /* Altera o cursor para uma mão ao passar sobre o ponto */
+  height: 15px; /* Define a altura dos pontos */
+  width: 15px; /* Define a largura dos pontos */
+  margin: 0 2px; /* Adiciona um pequeno espaçamento horizontal entre os pontos */
+  background-color: #bbb; /* Define a cor de fundo dos pontos como cinza claro */
+  border-radius: 50%; /* Torna os pontos circulares */
+  display: inline-block; /* Faz com que os pontos se comportem como blocos inline */
+  transition: background-color 0.6s ease; /* Adiciona uma transição suave para a cor de fundo dos pontos */
+}
+
+/* Define o estilo dos pontos ativos e ao passar o mouse */
+.active, .dot:hover {
+  background-color: #717171; /* Define a cor de fundo dos pontos ativos e ao passar o mouse como cinza escuro */
+}
+
+/* Define a animação de desvanecimento para os slides */
+.fade {
+  animation-name: fade; /* Define o nome da animação para o efeito de desvanecimento */
+  animation-duration: 1.5s; /* Define a duração da animação como 1.5 segundos */
+}
+
+/* Define a chave de animação para o efeito de desvanecimento */
+@keyframes fade {
+  from { opacity: .4 } /* Começa a animação com uma opacidade de 0.4 */
+  to { opacity: 1 } /* Termina a animação com uma opacidade de 1 */
+}
+
+/* Define o estilo da seção de contato */
+.contact {
+  display: flex; /* Usa flexbox para layout */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo da seção de contato */
+  align-items: center; /* Centraliza verticalmente o conteúdo da seção de contato */
+  min-height: 100vh; /* Garante que a seção de contato ocupe pelo menos 100% da altura da tela */
+  padding: 20px; /* Define o preenchimento interno da seção de contato */
+  margin-top: 20px; /* Adiciona uma margem superior para a seção de contato */
+}
+
+/* Define o estilo do formulário dentro da seção de contato */
+form {
+  display: flex; /* Usa flexbox para layout */
+  flex-direction: column; /* Organiza os elementos do formulário em coluna */
+  width: 100%; /* Define a largura do formulário como 100% do seu container */
+  max-width: 400px; /* Define a largura máxima do formulário */
+  border: 2px solid #ccc; /* Adiciona uma borda cinza clara ao redor do formulário */
+  border-radius: 8px; /* Adiciona bordas arredondadas ao formulário */
+  padding: 20px; /* Define o preenchimento interno do formulário */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao formulário */
+  background-color: transparent; /* Define a cor de fundo do formulário como transparente */
+}
+
+/* Define o estilo dos rótulos no formulário */
+label {
+  margin: 10px 0 5px; /* Adiciona margem aos rótulos para espaçamento */
+  font-weight: bold; /* Define o peso da fonte dos rótulos como negrito */
+  color: white; /* Define a cor do texto dos rótulos como branco */
+}
+
+/* Define o estilo dos campos de entrada de texto e número */
+input[type="text"], input[type="number"] {
+  padding: 10px; /* Define o preenchimento interno dos campos */
+  margin-bottom: 15px; /* Adiciona uma margem inferior entre os campos */
+  border: 1px solid #ccc; /* Adiciona uma borda cinza clara aos campos */
+  border-radius: 4px; /* Adiciona bordas arredondadas aos campos */
+  width: auto; /* Define a largura automática dos campos */
+  font-size: 16px; /* Define o tamanho da fonte dos campos */
+}
+
+/* Define o estilo da área de texto */
+textarea {
+  padding: 10px; /* Define o preenchimento interno da área de texto */
+  margin-bottom: 20px; /* Adiciona uma margem inferior entre a área de texto e o botão de envio */
+  border: 1px solid #ccc; /* Adiciona uma borda cinza clara à área de texto */
+  border-radius: 4px; /* Adiciona bordas arredondadas à área de texto */
+  width: auto; /* Define a largura automática da área de texto */
+  font-size: 16px; /* Define o tamanho da fonte da área de texto */
+  resize: vertical; /* Permite o redimensionamento vertical da área de texto */
+}
+
+/* Define o estilo do botão de envio */
+input[type="submit"] {
+  padding: 10px; /* Define o preenchimento interno do botão */
+  background-color: #333; /* Define a cor de fundo do botão como cinza escuro */
+  color: #fff; /* Define a cor do texto do botão como branco */
+  border: none; /* Remove a borda padrão do botão */
+  border-radius: 4px; /* Adiciona bordas arredondadas ao botão */
+  cursor: pointer; /* Altera o cursor para uma mão ao passar sobre o botão */
+  font-size: 16px; /* Define o tamanho da fonte do botão */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo do botão */
+}
+
+/* Define o estilo do botão de envio ao passar o mouse */
+input[type="submit"]:hover {
+  background-color: #555; /* Define a cor de fundo do botão como cinza mais claro ao passar o mouse */
+}
+
+/* Responsividade para telas pequenas */
+@media screen and (max-width: 768px) {
+  .header a {
+    display: block; /* Faz com que os links do cabeçalho sejam exibidos em bloco em telas pequenas */
+    text-align: center; /* Alinha o texto dos links ao centro */
+    margin: 5px 0; /* Adiciona margem vertical entre os links */
+  }
+  
+  .header-right {
+    float: none; /* Remove o flutuar dos links do cabeçalho em telas pequenas */
+    text-align: center; /* Centraliza os links do cabeçalho */
+  }
+  
+  .contact {
+    margin-top: 60px; /* Ajusta a margem superior para cabeçalhos menores */
+  }
+}
