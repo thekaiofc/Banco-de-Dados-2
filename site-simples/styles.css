@@ -19,33 +19,61 @@ body {
   top: 0; /* Posiciona o cabeçalho no topo da página */
   left: 0; /* Posiciona o cabeçalho no canto esquerdo da página */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao cabeçalho */
-  z-index: 1000; /* Garante que o cabeçalho fique sobre outros elementos */
+  z-index: 10; /* Garante que o cabeçalho fique sobre outros elementos */
 }
 
 /* Adiciona uma margem ao corpo para garantir que o conteúdo não sobreponha o cabeçalho fixo */
 body::before {
   content: ""; /* Adiciona conteúdo vazio */
   display: block; /* Define o display como bloco para criar um espaçamento */
-  height: 80px; /* Define a altura do espaçamento para a altura do cabeçalho */
+  height: 30px; /* Define a altura do espaçamento para a altura do cabeçalho */
 }
 
 /* Define o estilo dos links no cabeçalho */
 .header a {
   color: white; /* Define a cor do texto dos links como branco */
+  font-weight: bold;
   text-align: center; /* Alinha o texto dos links ao centro */
-  padding: 12px; /* Define o preenchimento interno dos links */
+  padding: 10px; /* Define o preenchimento interno dos links */
   text-decoration: none; /* Remove o sublinhado dos links */
   font-size: 16px; /* Define o tamanho da fonte dos links */
   line-height: 25px; /* Define a altura da linha dos links */
   border-radius: 4px; /* Adiciona bordas arredondadas aos links */
   display: inline-block; /* Faz com que os links se comportem como blocos inline */
   margin: 0 5px; /* Adiciona espaçamento horizontal entre os links */
+  cursor: pointer; /* Altera o cursor para uma mão ao passar sobre o botão */
+}
+.container .text-home{
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.text-home {
+  color: white;
+  display: flex; /* Usa flexbox para layout */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo da seção de contato */
+  padding: 20px; /* Define o preenchimento interno da seção de contato */
+  margin-top: 20px; /* Adiciona uma margem superior para a seção de contato */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Estilo específico para o link ativo no cabeçalho */
 .header a.active {
   background-color: transparent; /* Define a cor de fundo do link ativo */
   color: white; /* Define a cor do texto do link ativo como branco */
+  font-size: 16px; /* Define o tamanho da fonte do botão */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo do botão */
+}
+
+.header a.active :hover {
+  color: #050505; /* Define a cor de fundo do botão como cinza mais claro ao passar o mouse */
 }
 
 /* Define o estilo dos botões de navegação do slideshow */
@@ -176,7 +204,7 @@ textarea {
 /* Define o estilo do botão de envio */
 input[type="submit"] {
   padding: 10px; /* Define o preenchimento interno do botão */
-  background-color: #333; /* Define a cor de fundo do botão como cinza escuro */
+  background-color: #474646; /* Define a cor de fundo do botão como cinza escuro */
   color: #fff; /* Define a cor do texto do botão como branco */
   border: none; /* Remove a borda padrão do botão */
   border-radius: 4px; /* Adiciona bordas arredondadas ao botão */
@@ -187,7 +215,7 @@ input[type="submit"] {
 
 /* Define o estilo do botão de envio ao passar o mouse */
 input[type="submit"]:hover {
-  background-color: #555; /* Define a cor de fundo do botão como cinza mais claro ao passar o mouse */
+  background-color: #050505; /* Define a cor de fundo do botão como cinza mais claro ao passar o mouse */
 }
 
 /* Responsividade para telas pequenas */
@@ -195,7 +223,8 @@ input[type="submit"]:hover {
   .header a {
     display: block; /* Faz com que os links do cabeçalho sejam exibidos em bloco em telas pequenas */
     text-align: center; /* Alinha o texto dos links ao centro */
-    margin: 5px 0; /* Adiciona margem vertical entre os links */
+    flex-direction: row;
+    margin: 2px 0; /* Adiciona margem vertical entre os links */
   }
   
   .header-right {
@@ -204,6 +233,6 @@ input[type="submit"]:hover {
   }
   
   .contact {
-    margin-top: 60px; /* Ajusta a margem superior para cabeçalhos menores */
+    margin-top: 30px; /* Ajusta a margem superior para cabeçalhos menores */
   }
 }
